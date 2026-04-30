@@ -9,3 +9,10 @@ Switch between differenct versions of python
 
 https://github.com/KimiNewt/pyshark/issues/674
 Troubleshooting
+
+https://codingnomads.com/python-write-to-file
+Researching how to write to file in Python
+
+https://www.w3schools.com/python/python_user_input.asp
+User input handling
+
