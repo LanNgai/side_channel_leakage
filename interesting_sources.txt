@@ -1,0 +1,11 @@
+https://stackoverflow.com/questions/11217674/how-to-calculate-distance-from-wifi-router-using-signal-strength
+About how to calculate distance from RSS
+
+https://minkcoregame.medium.com/python-with-pyshark-a-lazy-way-for-automated-penetration-testing-4f3952f33707
+Gathering ideas about pyshark
+
+https://linuxconfig.org/how-to-switch-between-python-versions-on-fedora-linux
+Switch between differenct versions of python
+
+https://github.com/KimiNewt/pyshark/issues/674
+Troubleshooting
