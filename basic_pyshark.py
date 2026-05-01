@@ -17,19 +17,34 @@ class Pyshark_distance():
         condition = 2.5 # accuracy notes
         return round(10 ** ((calibration - rssi) / (10 * condition)), 2)
     
+    def get_ssid(self, packet): 
+        try:
+            raw = packet['wlan.mgt'].wlan_ssid
+            return bytes.fromhex(str(raw)).decode('utf-8', errors='replace')
+        except (KeyError, AttributeError, ValueError):
+            pass
+        
+        try:
+            ssid = packet['wlan_mgt'].get_field_value('ssid')
+            if ssid:
+                return str(ssid)
+        except (KeyError, AttributeError):
+            pass
+        return '(wildcard)'
+    
     def live_data(self, interface):
     
         loop = asyncio.new_event_loop()
         asyncio.set_event_loop(loop)
 
         cap = pyshark.LiveCapture(interface= interface, 
-                                #   display_filter='(wlan.fc.type_subtype == 0x00' +
-                                #   '|| wlan.fc.type_subtype == 0x01' +
-                                #   '|| wlan.fc.type_subtype == 0x02' + 
-                                #   '|| wlan.fc.type_subtype == 0x03 ' + 
-                                #   '||  wlan.fc.type_subtype == 0x04 ' + 
-                                #   '|| wlan.fc.type_subtype == 0x05 ' + 
-                                #   '|| wlan.fc.type_subtype == 0x08)', 
+                                  display_filter='(wlan.fc.type_subtype == 0x00' +
+                                  '|| wlan.fc.type_subtype == 0x01' +
+                                  '|| wlan.fc.type_subtype == 0x02' + 
+                                  '|| wlan.fc.type_subtype == 0x03 ' + 
+                                  '||  wlan.fc.type_subtype == 0x04 ' + 
+                                  '|| wlan.fc.type_subtype == 0x05 ' + 
+                                  '|| wlan.fc.type_subtype == 0x08)', 
                                   debug=True)
 
         for packet in cap.sniff_continuously():
@@ -38,19 +53,23 @@ class Pyshark_distance():
             subtype = packet.wlan.fc_subtype
             mac = packet.wlan.sa # source MAC address
             
-            ssid = packet.wlan.get_field_value('ssid') # ssid field
+            # ssid = packet.wlan.get_field_value('ssid') # ssid field
             destination_bssid = packet.wlan.ra
             
             # Lan testing why we couldn't get the SSID
-            # ssid = str(packet['wlan_mgt'].get_field_value('ssid') or '(wildcard)')
+            # ssid = str(packet['wlan.mgt'].get_field_value('ssid') or '(wildcard)')
+            # ssid = str(packet['wlan.mgt'].get_field_value('ssid'))
+
             # ssid = str(packet.wlan.mgt.ssid)
+            
+            ssid = self.get_ssid(packet)
             
             bssid = packet.wlan.bssid
             rssi = int(packet.radiotap.dbm_antsignal)
 
             distance = self.rssi_to_distance(rssi)
 
-            print(f"SubType: {subtype} | MAC: {mac} | SSID: '{ssid}'Destination BSSID : {destination_bssid} |  BSSID: '{bssid}' | Signal: {rssi} dBm | Distance: {distance} m")
+            print(f"SubType: '{subtype}'   | MAC: '{mac}' | SSID: '{ssid}'| Destination BSSID : '{destination_bssid}' |  BSSID: '{bssid}' | Signal: '{rssi}' dBm | Distance: '{distance}' m")
         
         
    
