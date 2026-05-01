@@ -45,6 +45,7 @@ class Pyshark_distance():
                                   '||  wlan.fc.type_subtype == 0x04 ' + 
                                   '|| wlan.fc.type_subtype == 0x05 ' + 
                                   '|| wlan.fc.type_subtype == 0x08)', 
+                                # monitor_mode=True,
                                   debug=True)
 
         for packet in cap.sniff_continuously():
@@ -62,7 +63,9 @@ class Pyshark_distance():
 
             # ssid = str(packet.wlan.mgt.ssid)
             
-            ssid = self.get_ssid(packet)
+            # ssid = self.get_ssid(packet)
+            raw_ssid = packet.layers[1].get_field_value('wlan_ssid')
+            ssid = bytes.fromhex(str(raw_ssid)).decode("utf-8", errors="replace")
             
             bssid = packet.wlan.bssid
             rssi = int(packet.radiotap.dbm_antsignal)
@@ -70,10 +73,6 @@ class Pyshark_distance():
             distance = self.rssi_to_distance(rssi)
 
             print(f"SubType: '{subtype}'   | MAC: '{mac}' | SSID: '{ssid}'| Destination BSSID : '{destination_bssid}' |  BSSID: '{bssid}' | Signal: '{rssi}' dBm | Distance: '{distance}' m")
-        
-        
-   
-
    
 
 if __name__ == '__main__':
