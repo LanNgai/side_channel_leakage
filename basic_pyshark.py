@@ -1,6 +1,7 @@
 ## https://medium.com/@ahmedsobhialii/deep-packet-capture-in-python-a-complete-guide-to-sniffing-techniques-54d650e403e1
 import asyncio
 import pyshark
+import binascii
 
 class Pyshark_distance():
     
@@ -69,16 +70,16 @@ class Pyshark_distance():
             
             ssid = '(wildcard)'
             for layer in packet.layers:
-                hex_ssid = getattr(layer, 'wlan_ssid', None)
-                if hex_ssid:
+                raw_ssid = getattr(layer, 'wlan_ssid', None)
+                if raw_ssid:
                     try:
-                        ssid = "bytes" + bytes.fromhex(str(hex_ssid)).decode('utf-8', errors='replace').strip()
+                        ssid_bytes = bytes.fromhex(str(raw_ssid).replace(':', ''))
+                        ssid = ssid_bytes.decode('utf-8', errors='replace').strip()
                         if not ssid:
                             ssid = '(wildcard)'
-                    except ValueError:
-                        ssid = "exceptions" + (str(hex_ssid))
+                    except (ValueError, UnicodeDecodeError):
+                        ssid = str(raw_ssid)
                     break
-            
             bssid = packet.wlan.bssid
             rssi = int(packet.radiotap.dbm_antsignal)
 
