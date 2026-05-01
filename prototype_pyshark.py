@@ -100,6 +100,7 @@ if __name__ == '__main__':
     # Static variables for wireless interfaces used previously
     int_one = 'wlp0s20f0u1u1'
     int_two = 'wlp0s20f0u1u4u1'
+    int_three = 'wlp0s20f0u3u1u4'
 
     pd = Pyshark_distance() # Instance of the class
     interface = pd.user_input() # Wireless interface taken from user input
