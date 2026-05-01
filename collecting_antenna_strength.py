@@ -1,5 +1,8 @@
 #! /usr/bin/env python3
-#Parts were taken from: https://github.com/wang-xinyu/wifi-ap-scanner/blob/master/wifi_ap_scanner.py
+
+# wifi-ap-scanner
+# Wang Xinyu (2017)
+# https://github.com/wang-xinyu/wifi-ap-scanner/blob/master/wifi_ap_scanner.py [accessed 29 Apr 2026]
 
 import dbus
 import sys
