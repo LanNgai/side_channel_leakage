@@ -1,0 +1,95 @@
+lan@fedora:~/Programs/side_channel_leakage$ sudo python basic_pyshark.py 
+
+Please enter the name of the interface: wlp0s20f0u1u1
+2026-05-01 22:11:34,563 - LiveCapture - DEBUG - Creating Dumpcap subprocess with parameters: /usr/sbin/dumpcap -q -i wlp0s20f0u1u1 -w -
+2026-05-01 22:11:34,564 - LiveCapture - DEBUG - Dumpcap subprocess (pid 25598) created
+2026-05-01 22:11:34,765 - LiveCapture - DEBUG - Creating TShark subprocess with parameters: /usr/sbin/tshark -l -n -T pdml -Y (wlan.fc.type_subtype == 0x00||  wlan.fc.type_subtype == 0x04 || wlan.fc.type_subtype == 0x05 ) -i -
+2026-05-01 22:11:34,765 - LiveCapture - DEBUG - Executable: /usr/sbin/tshark
+2026-05-01 22:11:34,765 - LiveCapture - DEBUG - Capturing on 'wlp0s20f0u1u1'
+2026-05-01 22:11:34,766 - LiveCapture - DEBUG - File: -
+2026-05-01 22:11:34,766 - LiveCapture - DEBUG - TShark subprocess (pid 25622) created
+2026-05-01 22:11:34,817 - LiveCapture - DEBUG - Running as user "root" and group "root". This could be dangerous.
+2026-05-01 22:11:34,962 - LiveCapture - DEBUG - Capturing on 'Standard input'
+SubType: '4'   | MAC: '76:3c:07:f1:02:b2' | SSID: 'SSID: <MISSING>'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-82' dBm | Distance: '33.11' m
+SubType: '5'   | MAC: 'b0:0a:d5:d6:46:4c' | SSID: 'Three_CC464C'| Dest BSSID : '76:3c:07:f1:02:b2' | Signal: '-80' dBm | Distance: '27.54' m
+SubType: '4'   | MAC: '76:3c:07:f1:02:b2' | SSID: 'SSID: <MISSING>'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-82' dBm | Distance: '33.11' m
+SubType: '5'   | MAC: 'b0:0a:d5:d6:46:4c' | SSID: 'Three_CC464C'| Dest BSSID : '76:3c:07:f1:02:b2' | Signal: '-82' dBm | Distance: '33.11' m
+SubType: '4'   | MAC: 'da:53:5c:cc:38:3e' | SSID: 'SSID: <MISSING>'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-56' dBm | Distance: '3.02' m
+SubType: '4'   | MAC: 'da:53:5c:cc:38:3e' | SSID: 'SSID: <MISSING>'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-66' dBm | Distance: '7.59' m
+SubType: '4'   | MAC: '62:4b:ed:34:1b:30' | SSID: 'SSID: <MISSING>'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-70' dBm | Distance: '10.96' m
+SubType: '5'   | MAC: 'b0:0a:d5:d6:46:4c' | SSID: 'Three_CC464C'| Dest BSSID : '62:4b:ed:34:1b:30' | Signal: '-78' dBm | Distance: '22.91' m
+SubType: '4'   | MAC: '62:4b:ed:34:1b:30' | SSID: 'SSID: <MISSING>'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-70' dBm | Distance: '10.96' m
+SubType: '5'   | MAC: 'b0:0a:d5:d6:46:4c' | SSID: 'Three_CC464C'| Dest BSSID : '62:4b:ed:34:1b:30' | Signal: '-78' dBm | Distance: '22.91' m
+SubType: '4'   | MAC: 'c6:2f:2b:ff:c9:97' | SSID: 'SSID: <MISSING>'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-76' dBm | Distance: '19.05' m
+SubType: '4'   | MAC: 'c6:2f:2b:ff:c9:97' | SSID: 'SSID: <MISSING>'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-76' dBm | Distance: '19.05' m
+SubType: '4'   | MAC: '62:ac:76:7a:dc:6a' | SSID: 'SSID: <MISSING>'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-60' dBm | Distance: '4.37' m
+SubType: '4'   | MAC: '62:ac:76:7a:dc:6a' | SSID: 'SSID: <MISSING>'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-60' dBm | Distance: '4.37' m
+SubType: '4'   | MAC: '26:e1:42:3e:41:39' | SSID: 'SSID: <MISSING>'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-60' dBm | Distance: '4.37' m
+SubType: '4'   | MAC: '26:e1:42:3e:41:39' | SSID: 'SSID: <MISSING>'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-60' dBm | Distance: '4.37' m
+SubType: '4'   | MAC: '0e:d6:63:f7:62:80' | SSID: 'SSID: <MISSING>'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-72' dBm | Distance: '13.18' m
+SubType: '4'   | MAC: '0e:d6:63:f7:62:80' | SSID: 'SSID: <MISSING>'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-74' dBm | Distance: '15.85' m
+SubType: '4'   | MAC: '3a:47:25:4a:dc:49' | SSID: 'SSID: <MISSING>'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-66' dBm | Distance: '7.59' m
+SubType: '4'   | MAC: '3a:47:25:4a:dc:49' | SSID: 'SSID: <MISSING>'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-66' dBm | Distance: '7.59' m
+SubType: '4'   | MAC: 'ae:3a:d9:65:14:cc' | SSID: 'SSID: <MISSING>'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-76' dBm | Distance: '19.05' m
+SubType: '4'   | MAC: 'ae:3a:d9:65:14:cc' | SSID: 'SSID: <MISSING>'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-78' dBm | Distance: '22.91' m
+SubType: '4'   | MAC: '26:df:15:4c:87:c2' | SSID: 'SSID: <MISSING>'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-60' dBm | Distance: '4.37' m
+SubType: '4'   | MAC: '26:df:15:4c:87:c2' | SSID: 'SSID: <MISSING>'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-62' dBm | Distance: '5.25' m
+SubType: '4'   | MAC: '22:72:95:bf:94:a1' | SSID: 'SSID: <MISSING>'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-62' dBm | Distance: '5.25' m
+SubType: '4'   | MAC: '22:72:95:bf:94:a1' | SSID: 'SSID: <MISSING>'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-60' dBm | Distance: '4.37' m
+SubType: '4'   | MAC: 'b6:aa:cb:29:e4:40' | SSID: 'SSID: <MISSING>'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-62' dBm | Distance: '5.25' m
+SubType: '4'   | MAC: 'b6:aa:cb:29:e4:40' | SSID: 'SSID: <MISSING>'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-62' dBm | Distance: '5.25' m
+SubType: '4'   | MAC: '26:e3:61:ca:c3:a4' | SSID: 'SSID: <MISSING>'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-72' dBm | Distance: '13.18' m
+SubType: '4'   | MAC: '26:e3:61:ca:c3:a4' | SSID: 'SSID: <MISSING>'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-72' dBm | Distance: '13.18' m
+SubType: '4'   | MAC: 'e2:f9:39:51:0f:4c' | SSID: 'SSID: <MISSING>'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-66' dBm | Distance: '7.59' m
+SubType: '4'   | MAC: 'e2:f9:39:51:0f:4c' | SSID: 'SSID: <MISSING>'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-66' dBm | Distance: '7.59' m
+SubType: '4'   | MAC: '9e:7b:32:b4:43:b9' | SSID: 'SSID: <MISSING>'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-80' dBm | Distance: '27.54' m
+SubType: '5'   | MAC: 'b0:0a:d5:d6:46:4c' | SSID: 'Three_CC464C'| Dest BSSID : '9e:7b:32:b4:43:b9' | Signal: '-80' dBm | Distance: '27.54' m
+SubType: '4'   | MAC: '9e:7b:32:b4:43:b9' | SSID: 'SSID: <MISSING>'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-76' dBm | Distance: '19.05' m
+SubType: '5'   | MAC: 'b0:0a:d5:d6:46:4c' | SSID: 'Three_CC464C'| Dest BSSID : '9e:7b:32:b4:43:b9' | Signal: '-80' dBm | Distance: '27.54' m
+SubType: '4'   | MAC: '62:09:bb:0e:2d:cb' | SSID: 'TP-Link_D5C0'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-60' dBm | Distance: '4.37' m
+SubType: '4'   | MAC: '62:09:bb:0e:2d:cb' | SSID: 'TP-Link_D5C0'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-60' dBm | Distance: '4.37' m
+SubType: '4'   | MAC: '76:d0:54:8c:48:f7' | SSID: 'TP-Link_D5C0'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-64' dBm | Distance: '6.31' m
+SubType: '4'   | MAC: '76:d0:54:8c:48:f7' | SSID: 'TP-Link_D5C0'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-62' dBm | Distance: '5.25' m
+SubType: '4'   | MAC: '4e:e0:b9:e2:2c:30' | SSID: 'TP-Link_D5C0'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-56' dBm | Distance: '3.02' m
+SubType: '4'   | MAC: '4e:e0:b9:e2:2c:30' | SSID: 'TP-Link_D5C0'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-56' dBm | Distance: '3.02' m
+SubType: '4'   | MAC: '46:a3:56:ae:09:52' | SSID: 'TP-Link_D5C0'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-60' dBm | Distance: '4.37' m
+SubType: '4'   | MAC: '46:a3:56:ae:09:52' | SSID: 'TP-Link_D5C0'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-58' dBm | Distance: '3.63' m
+SubType: '4'   | MAC: '9a:ad:4c:09:16:d1' | SSID: 'TP-Link_D5C0'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-48' dBm | Distance: '1.45' m
+SubType: '4'   | MAC: '9a:ad:4c:09:16:d1' | SSID: 'TP-Link_D5C0'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-48' dBm | Distance: '1.45' m
+SubType: '4'   | MAC: '9a:ad:4c:09:16:d1' | SSID: 'TP-Link_D5C0'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-46' dBm | Distance: '1.2' m
+SubType: '4'   | MAC: '9a:ad:4c:09:16:d1' | SSID: 'TP-Link_D5C0'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-46' dBm | Distance: '1.2' m
+SubType: '4'   | MAC: '9a:ad:4c:09:16:d1' | SSID: 'TP-Link_D5C0'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-50' dBm | Distance: '1.74' m
+SubType: '4'   | MAC: '9a:ad:4c:09:16:d1' | SSID: 'TP-Link_D5C0'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-48' dBm | Distance: '1.45' m
+SubType: '4'   | MAC: '9a:ad:4c:09:16:d1' | SSID: 'TP-Link_D5C0'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-50' dBm | Distance: '1.74' m
+SubType: '4'   | MAC: '9a:ad:4c:09:16:d1' | SSID: 'TP-Link_D5C0'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-48' dBm | Distance: '1.45' m
+SubType: '4'   | MAC: 'bc:39:10:7b:fa:07' | SSID: 'SSID: <MISSING>'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-92' dBm | Distance: '83.18' m
+SubType: '5'   | MAC: 'b0:0a:d5:d6:46:4c' | SSID: 'Three_CC464C'| Dest BSSID : 'bc:39:10:7b:fa:07' | Signal: '-82' dBm | Distance: '33.11' m
+SubType: '4'   | MAC: 'bc:39:10:7b:fa:07' | SSID: 'SSID: <MISSING>'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-90' dBm | Distance: '69.18' m
+SubType: '4'   | MAC: 'bc:39:10:7b:fa:07' | SSID: 'SSID: <MISSING>'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-90' dBm | Distance: '69.18' m
+SubType: '4'   | MAC: '9a:ad:4c:09:16:d1' | SSID: 'TP-Link_D5C0'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-50' dBm | Distance: '1.74' m
+SubType: '4'   | MAC: '9a:ad:4c:09:16:d1' | SSID: 'TP-Link_D5C0'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-50' dBm | Distance: '1.74' m
+SubType: '4'   | MAC: '9a:ad:4c:09:16:d1' | SSID: 'TP-Link_D5C0'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-52' dBm | Distance: '2.09' m
+SubType: '4'   | MAC: '9a:ad:4c:09:16:d1' | SSID: 'TP-Link_D5C0'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-52' dBm | Distance: '2.09' m
+SubType: '4'   | MAC: '9a:ad:4c:09:16:d1' | SSID: 'TP-Link_D5C0'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-50' dBm | Distance: '1.74' m
+SubType: '4'   | MAC: '9a:ad:4c:09:16:d1' | SSID: 'TP-Link_D5C0'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-50' dBm | Distance: '1.74' m
+SubType: '4'   | MAC: '9a:ad:4c:09:16:d1' | SSID: 'TP-Link_D5C0'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-54' dBm | Distance: '2.51' m
+SubType: '4'   | MAC: '9a:ad:4c:09:16:d1' | SSID: 'TP-Link_D5C0'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-54' dBm | Distance: '2.51' m
+SubType: '4'   | MAC: '9a:ad:4c:09:16:d1' | SSID: 'TP-Link_D5C0'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-50' dBm | Distance: '1.74' m
+SubType: '4'   | MAC: '9a:ad:4c:09:16:d1' | SSID: 'TP-Link_D5C0'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-50' dBm | Distance: '1.74' m
+SubType: '4'   | MAC: '9a:ad:4c:09:16:d1' | SSID: 'TP-Link_D5C0'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-54' dBm | Distance: '2.51' m
+SubType: '4'   | MAC: '9a:ad:4c:09:16:d1' | SSID: 'TP-Link_D5C0'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-54' dBm | Distance: '2.51' m
+SubType: '4'   | MAC: '9a:ad:4c:09:16:d1' | SSID: 'TP-Link_D5C0'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-52' dBm | Distance: '2.09' m
+SubType: '4'   | MAC: '9a:ad:4c:09:16:d1' | SSID: 'TP-Link_D5C0'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-52' dBm | Distance: '2.09' m
+SubType: '4'   | MAC: '9a:ad:4c:09:16:d1' | SSID: 'TP-Link_D5C0'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-52' dBm | Distance: '2.09' m
+SubType: '4'   | MAC: '9a:ad:4c:09:16:d1' | SSID: 'TP-Link_D5C0'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-52' dBm | Distance: '2.09' m
+SubType: '4'   | MAC: '9a:ad:4c:09:16:d1' | SSID: 'TP-Link_D5C0'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-50' dBm | Distance: '1.74' m
+SubType: '4'   | MAC: '9a:ad:4c:09:16:d1' | SSID: 'TP-Link_D5C0'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-50' dBm | Distance: '1.74' m
+SubType: '4'   | MAC: '9a:ad:4c:09:16:d1' | SSID: 'TP-Link_D5C0'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-54' dBm | Distance: '2.51' m
+SubType: '4'   | MAC: '9a:ad:4c:09:16:d1' | SSID: 'TP-Link_D5C0'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-54' dBm | Distance: '2.51' m
+SubType: '4'   | MAC: '9a:ad:4c:09:16:d1' | SSID: 'TP-Link_D5C0'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-48' dBm | Distance: '1.45' m
+SubType: '4'   | MAC: '9a:ad:4c:09:16:d1' | SSID: 'TP-Link_D5C0'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-48' dBm | Distance: '1.45' m
+SubType: '4'   | MAC: '9a:ad:4c:09:16:d1' | SSID: 'TP-Link_D5C0'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-48' dBm | Distance: '1.45' m
+SubType: '4'   | MAC: '9a:ad:4c:09:16:d1' | SSID: 'TP-Link_D5C0'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-48' dBm | Distance: '1.45' m
+^C2026-05-01 22:13:12,190 - LiveCapture - DEBUG - Cleanup Subprocess (pid 25622)
+2026-05-01 22:13:12,191 - LiveCapture - DEBUG - Packets captured: 2665
+2026-05-01 22:13:12,191 - LiveCapture - DEBUG - Packets received/dropped on interface 'wlp0s20f0u1u1': 2665/0 (pcap:0/dumpcap:0/flushed:0/ps_ifdrop:0) (100.0%)

@@ -1,7 +1,6 @@
 ## https://medium.com/@ahmedsobhialii/deep-packet-capture-in-python-a-complete-guide-to-sniffing-techniques-54d650e403e1
 import asyncio
 import pyshark
-import binascii
 
 class Pyshark_distance():
     
@@ -14,8 +13,8 @@ class Pyshark_distance():
         return interface
     
     def rssi_to_distance(self, rssi):
-        calibration = -44 # calibration device's RSS at a distance of 1 meter                              
-        condition = 2.5 # accuracy notes
+        calibration = -80 # calibration device's RSS at a distance of 1 meter, Lan's iPhone -90 and -80                             
+        condition = 2 # accuracy notes
         return round(10 ** ((calibration - rssi) / (10 * condition)), 2)
     
     def get_ssid(self, packet): 
@@ -40,12 +39,12 @@ class Pyshark_distance():
 
         cap = pyshark.LiveCapture(interface= interface, 
                                   display_filter='(wlan.fc.type_subtype == 0x00' +
-                                  '|| wlan.fc.type_subtype == 0x01' +
-                                  '|| wlan.fc.type_subtype == 0x02' + 
-                                  '|| wlan.fc.type_subtype == 0x03 ' + 
+                                #   '|| wlan.fc.type_subtype == 0x01' +
+                                #   '|| wlan.fc.type_subtype == 0x02' + 
+                                #   '|| wlan.fc.type_subtype == 0x03 ' + 
                                   '||  wlan.fc.type_subtype == 0x04 ' + 
-                                  '|| wlan.fc.type_subtype == 0x05 ' + 
-                                  '|| wlan.fc.type_subtype == 0x08)', 
+                                  '|| wlan.fc.type_subtype == 0x05 )', 
+                                #   '|| wlan.fc.type_subtype == 0x08)', 
                                 # monitor_mode=True,
                                   debug=True)
 
