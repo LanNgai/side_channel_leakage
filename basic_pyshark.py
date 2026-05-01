@@ -73,7 +73,7 @@ class Pyshark_distance():
                 raw_ssid = getattr(layer, 'wlan_ssid', None)
                 if raw_ssid:
                     try:
-                        ssid_bytes = bytes.fromhex(str(raw_ssid).replace(':', ''))
+                        ssid_bytes = bytes.fromhex(str(raw_ssid).replace(':', '')) 
                         ssid = ssid_bytes.decode('utf-8', errors='replace').strip()
                         if not ssid:
                             ssid = '(wildcard)'
@@ -85,7 +85,7 @@ class Pyshark_distance():
 
             distance = self.rssi_to_distance(rssi)
 
-            print(f"SubType: '{subtype}'   | MAC: '{mac}' | SSID: '{ssid}'| Destination BSSID : '{destination_bssid}' |  BSSID: '{bssid}' | Signal: '{rssi}' dBm | Distance: '{distance}' m")
+            print(f"SubType: '{subtype}'   | MAC: '{mac}' | SSID: '{ssid}'| Dest BSSID : '{destination_bssid}' | Signal: '{rssi}' dBm | Distance: '{distance}' m")
    
 
 if __name__ == '__main__':
