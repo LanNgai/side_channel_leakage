@@ -64,8 +64,20 @@ class Pyshark_distance():
             # ssid = str(packet.wlan.mgt.ssid)
             
             # ssid = self.get_ssid(packet)
-            raw_ssid = packet.layers[1].get_field_value('wlan_ssid')
-            ssid = bytes.fromhex(str(raw_ssid)).decode("utf-8", errors="replace")
+            # raw_ssid = packet.layers[1].wlan_ssid
+            #ssid = bytes.fromhex(str(raw_ssid)).decode("utf-8", errors="replace")
+            
+            ssid = '(wildcard)'
+            for layer in packet.layers:
+                hex_ssid = getattr(layer, 'wlan_ssid', None)
+                if hex_ssid:
+                    try:
+                        ssid = bytes.fromhex(str(hex_ssid)).decode('utf-8', errors='replace').strip()
+                        if not ssid:
+                            ssid = '(wildcard)'
+                    except ValueError:
+                        ssid = str(hex_ssid)
+                    break
             
             bssid = packet.wlan.bssid
             rssi = int(packet.radiotap.dbm_antsignal)
