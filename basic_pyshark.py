@@ -72,11 +72,11 @@ class Pyshark_distance():
                 hex_ssid = getattr(layer, 'wlan_ssid', None)
                 if hex_ssid:
                     try:
-                        ssid = bytes.fromhex(str(hex_ssid)).decode('utf-8', errors='replace').strip()
+                        ssid = "bytes" + bytes.fromhex(str(hex_ssid)).decode('utf-8', errors='replace').strip()
                         if not ssid:
                             ssid = '(wildcard)'
                     except ValueError:
-                        ssid = str(hex_ssid)
+                        ssid = "exceptions" + (str(hex_ssid))
                     break
             
             bssid = packet.wlan.bssid
