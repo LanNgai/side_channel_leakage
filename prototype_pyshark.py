@@ -2,6 +2,9 @@
 # by Ahmed Sobhi Ali (Jul 23 2025)
 # https://medium.com/@ahmedsobhialii/deep-packet-capture-in-python-a-complete-guide-to-sniffing-techniques-54d650e403e1 [accessed 29 04 2026]
 
+# Deep Packet Capture in Python: A Complete Guide to Sniffing Techniques
+# by Ahmed Sobhi Ali (Jul 23 2025)
+# https://stackoverflow.com/questions/11217674/how-to-calculate-distance-from-wifi-router-using-signal-strength [accessed 29 04 2026]
 
 import asyncio
 import pyshark
