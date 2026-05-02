@@ -16,3 +16,9 @@ Researching how to write to file in Python
 https://www.w3schools.com/python/python_user_input.asp
 User input handling
 
+https://www.geeksforgeeks.org/python/insert-a-variable-into-a-string-python/
+https://www.stratascratch.com/blog/how-to-replace-a-character-in-a-python-string
+https://acme.to/2021/11/20/python-convert-hex-to-ascii/
+
+https://www.geeksforgeeks.org/python/convert-hex-to-string-in-python/
+
