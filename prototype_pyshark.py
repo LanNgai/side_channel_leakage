@@ -19,7 +19,7 @@ class Pyshark_distance():
         return interface
     
     def rssi_to_distance(self, rssi):
-        calibration = -80 # calibration device's RSS at a distance of 1 meter, Lan's iPhone -90 and -80                             
+        calibration = -67 # calibration device's RSS at a distance of 1 meter, Lan's iPhone -90 and -80                             
         condition = 2 # accuracy notes
         return round(10 ** ((calibration - rssi) / (10 * condition)), 2)
     

@@ -1,0 +1,73 @@
+lan@fedora:~/Programs/side_channel_leakage$ sudo python prototype_pyshark.py 
+Please enter the name of the interface: wlp0s20f0u1u1
+2026-05-03 16:40:06,876 - LiveCapture - DEBUG - Creating Dumpcap subprocess with parameters: /usr/sbin/dumpcap -q -i wlp0s20f0u1u1 -w -
+2026-05-03 16:40:06,877 - LiveCapture - DEBUG - Dumpcap subprocess (pid 5171) created
+2026-05-03 16:40:06,996 - LiveCapture - DEBUG - Creating TShark subprocess with parameters: /usr/sbin/tshark -l -n -T pdml -Y (wlan.fc.type_subtype == 0x00|| wlan.fc.type_subtype == 0x01|| wlan.fc.type_subtype == 0x02|| wlan.fc.type_subtype == 0x03 ||  wlan.fc.type_subtype == 0x04 || wlan.fc.type_subtype == 0x05 || wlan.fc.type_subtype == 0x08)&& (wlan.ssid == "TP-Link_D5C0") -i -
+2026-05-03 16:40:06,996 - LiveCapture - DEBUG - Executable: /usr/sbin/tshark
+2026-05-03 16:40:06,997 - LiveCapture - DEBUG - Capturing on 'wlp0s20f0u1u1'
+2026-05-03 16:40:06,997 - LiveCapture - DEBUG - File: -
+2026-05-03 16:40:06,997 - LiveCapture - DEBUG - TShark subprocess (pid 5195) created
+2026-05-03 16:40:07,028 - LiveCapture - DEBUG - Running as user "root" and group "root". This could be dangerous.
+2026-05-03 16:40:07,110 - LiveCapture - DEBUG - Capturing on 'Standard input'
+SubType: '4'   | MAC: '3a:3c:a0:8f:36:6a' | SSID: 'TP-Link_D5C0'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-54' dBm | Distance: '0.05' m
+SubType: '4'   | MAC: '3a:3c:a0:8f:36:6a' | SSID: 'TP-Link_D5C0'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-54' dBm | Distance: '0.05' m
+SubType: '4'   | MAC: '4e:53:db:68:95:28' | SSID: 'TP-Link_D5C0'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-54' dBm | Distance: '0.05' m
+SubType: '4'   | MAC: '4e:53:db:68:95:28' | SSID: 'TP-Link_D5C0'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-54' dBm | Distance: '0.05' m
+SubType: '4'   | MAC: '16:19:12:bd:2e:6f' | SSID: 'TP-Link_D5C0'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-58' dBm | Distance: '0.08' m
+SubType: '4'   | MAC: '16:19:12:bd:2e:6f' | SSID: 'TP-Link_D5C0'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-56' dBm | Distance: '0.06' m
+SubType: '4'   | MAC: '8a:32:0d:a3:43:80' | SSID: 'TP-Link_D5C0'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-58' dBm | Distance: '0.08' m
+SubType: '4'   | MAC: '8a:32:0d:a3:43:80' | SSID: 'TP-Link_D5C0'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-56' dBm | Distance: '0.06' m
+SubType: '4'   | MAC: '16:3e:c5:2d:4e:fe' | SSID: 'TP-Link_D5C0'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-54' dBm | Distance: '0.05' m
+SubType: '4'   | MAC: '16:3e:c5:2d:4e:fe' | SSID: 'TP-Link_D5C0'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-54' dBm | Distance: '0.05' m
+SubType: '4'   | MAC: '3e:56:c1:4c:78:af' | SSID: 'TP-Link_D5C0'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-58' dBm | Distance: '0.08' m
+SubType: '4'   | MAC: '3e:56:c1:4c:78:af' | SSID: 'TP-Link_D5C0'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-60' dBm | Distance: '0.1' m
+SubType: '4'   | MAC: '9e:e9:65:af:58:fa' | SSID: 'TP-Link_D5C0'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-60' dBm | Distance: '0.1' m
+SubType: '4'   | MAC: '9e:e9:65:af:58:fa' | SSID: 'TP-Link_D5C0'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-58' dBm | Distance: '0.08' m
+SubType: '4'   | MAC: 'e2:fc:b2:31:9a:03' | SSID: 'TP-Link_D5C0'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-54' dBm | Distance: '0.05' m
+SubType: '4'   | MAC: 'e2:fc:b2:31:9a:03' | SSID: 'TP-Link_D5C0'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-54' dBm | Distance: '0.05' m
+SubType: '4'   | MAC: '36:35:6f:90:d5:60' | SSID: 'TP-Link_D5C0'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-56' dBm | Distance: '0.06' m
+SubType: '4'   | MAC: '36:35:6f:90:d5:60' | SSID: 'TP-Link_D5C0'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-56' dBm | Distance: '0.06' m
+SubType: '4'   | MAC: 'e2:26:08:36:91:49' | SSID: 'TP-Link_D5C0'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-54' dBm | Distance: '0.05' m
+SubType: '4'   | MAC: 'e2:26:08:36:91:49' | SSID: 'TP-Link_D5C0'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-58' dBm | Distance: '0.08' m
+SubType: '4'   | MAC: '8a:70:e0:6b:0d:44' | SSID: 'TP-Link_D5C0'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-54' dBm | Distance: '0.05' m
+SubType: '4'   | MAC: '8a:70:e0:6b:0d:44' | SSID: 'TP-Link_D5C0'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-54' dBm | Distance: '0.05' m
+SubType: '4'   | MAC: '2e:01:33:81:ef:1c' | SSID: 'TP-Link_D5C0'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-74' dBm | Distance: '0.5' m
+SubType: '4'   | MAC: '2e:01:33:81:ef:1c' | SSID: 'TP-Link_D5C0'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-72' dBm | Distance: '0.4' m
+SubType: '4'   | MAC: '62:be:84:d7:4e:a0' | SSID: 'TP-Link_D5C0'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-60' dBm | Distance: '0.1' m
+SubType: '4'   | MAC: '62:be:84:d7:4e:a0' | SSID: 'TP-Link_D5C0'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-60' dBm | Distance: '0.1' m
+SubType: '4'   | MAC: '4e:ce:e1:e1:c1:e6' | SSID: 'TP-Link_D5C0'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-60' dBm | Distance: '0.1' m
+SubType: '4'   | MAC: '4e:ce:e1:e1:c1:e6' | SSID: 'TP-Link_D5C0'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-58' dBm | Distance: '0.08' m
+SubType: '4'   | MAC: '62:9d:11:00:23:0e' | SSID: 'TP-Link_D5C0'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-58' dBm | Distance: '0.08' m
+SubType: '4'   | MAC: '62:9d:11:00:23:0e' | SSID: 'TP-Link_D5C0'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-58' dBm | Distance: '0.08' m
+SubType: '4'   | MAC: '7a:7e:bd:e1:c5:ce' | SSID: 'TP-Link_D5C0'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-64' dBm | Distance: '0.16' m
+SubType: '4'   | MAC: '96:e5:53:23:1f:64' | SSID: 'TP-Link_D5C0'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-64' dBm | Distance: '0.16' m
+SubType: '4'   | MAC: '96:e5:53:23:1f:64' | SSID: 'TP-Link_D5C0'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-64' dBm | Distance: '0.16' m
+SubType: '4'   | MAC: '72:09:28:47:04:e8' | SSID: 'TP-Link_D5C0'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-68' dBm | Distance: '0.25' m
+SubType: '4'   | MAC: '72:09:28:47:04:e8' | SSID: 'TP-Link_D5C0'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-72' dBm | Distance: '0.4' m
+SubType: '4'   | MAC: 'ae:0c:cb:42:0e:bc' | SSID: 'TP-Link_D5C0'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-60' dBm | Distance: '0.1' m
+SubType: '4'   | MAC: 'ae:0c:cb:42:0e:bc' | SSID: 'TP-Link_D5C0'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-60' dBm | Distance: '0.1' m
+SubType: '4'   | MAC: '2a:b1:f1:b9:7d:38' | SSID: 'TP-Link_D5C0'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-56' dBm | Distance: '0.06' m
+SubType: '4'   | MAC: '2a:b1:f1:b9:7d:38' | SSID: 'TP-Link_D5C0'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-56' dBm | Distance: '0.06' m
+SubType: '4'   | MAC: 'd2:e4:fc:ac:d6:d7' | SSID: 'TP-Link_D5C0'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-54' dBm | Distance: '0.05' m
+SubType: '4'   | MAC: 'd2:e4:fc:ac:d6:d7' | SSID: 'TP-Link_D5C0'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-54' dBm | Distance: '0.05' m
+SubType: '4'   | MAC: 'd2:2a:38:31:f6:ba' | SSID: 'TP-Link_D5C0'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-60' dBm | Distance: '0.1' m
+SubType: '4'   | MAC: 'd2:2a:38:31:f6:ba' | SSID: 'TP-Link_D5C0'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-62' dBm | Distance: '0.13' m
+SubType: '4'   | MAC: '3a:af:35:fb:38:18' | SSID: 'TP-Link_D5C0'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-64' dBm | Distance: '0.16' m
+SubType: '4'   | MAC: '3a:af:35:fb:38:18' | SSID: 'TP-Link_D5C0'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-62' dBm | Distance: '0.13' m
+SubType: '4'   | MAC: '46:96:ef:e3:f7:68' | SSID: 'TP-Link_D5C0'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-62' dBm | Distance: '0.13' m
+SubType: '4'   | MAC: '46:96:ef:e3:f7:68' | SSID: 'TP-Link_D5C0'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-64' dBm | Distance: '0.16' m
+SubType: '4'   | MAC: 'ba:8e:88:bf:09:90' | SSID: 'TP-Link_D5C0'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-58' dBm | Distance: '0.08' m
+SubType: '4'   | MAC: 'ba:8e:88:bf:09:90' | SSID: 'TP-Link_D5C0'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-60' dBm | Distance: '0.1' m
+SubType: '4'   | MAC: 'ea:d9:0c:64:e6:c1' | SSID: 'TP-Link_D5C0'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-56' dBm | Distance: '0.06' m
+SubType: '4'   | MAC: 'ea:d9:0c:64:e6:c1' | SSID: 'TP-Link_D5C0'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-56' dBm | Distance: '0.06' m
+SubType: '4'   | MAC: '72:be:35:ad:9a:ce' | SSID: 'TP-Link_D5C0'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-56' dBm | Distance: '0.06' m
+SubType: '4'   | MAC: '72:be:35:ad:9a:ce' | SSID: 'TP-Link_D5C0'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-56' dBm | Distance: '0.06' m
+SubType: '4'   | MAC: '86:3f:4b:eb:ac:b8' | SSID: 'TP-Link_D5C0'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-60' dBm | Distance: '0.1' m
+SubType: '4'   | MAC: '86:3f:4b:eb:ac:b8' | SSID: 'TP-Link_D5C0'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-60' dBm | Distance: '0.1' m
+SubType: '4'   | MAC: 'f6:e1:d9:fe:6e:39' | SSID: 'TP-Link_D5C0'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-58' dBm | Distance: '0.08' m
+SubType: '4'   | MAC: 'f6:e1:d9:fe:6e:39' | SSID: 'TP-Link_D5C0'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-58' dBm | Distance: '0.08' m
+SubType: '4'   | MAC: '56:7b:a8:9b:c8:25' | SSID: 'TP-Link_D5C0'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-56' dBm | Distance: '0.06' m
+SubType: '4'   | MAC: '56:7b:a8:9b:c8:25' | SSID: 'TP-Link_D5C0'| Dest BSSID : 'ff:ff:ff:ff:ff:ff' | Signal: '-58' dBm | Distance: '0.08' m
+^C2026-05-03 16:41:18,800 - LiveCapture - DEBUG - Cleanup Subprocess (pid 5195)
+2026-05-03 16:41:18,800 - LiveCapture - DEBUG - Packets captured: 205
+2026-05-03 16:41:18,801 - LiveCapture - DEBUG - Packets received/dropped on interface 'wlp0s20f0u1u1': 205/0 (pcap:0/dumpca
