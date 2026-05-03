@@ -10,19 +10,23 @@ int_three = 'wlp0s20f0u3u1u4'
 
 cap = pyshark.LiveCapture(interface= int_three, display_filter='(wlan.fc.type_subtype == 0x00 || wlan.fc.type_subtype == 0x01 || wlan.fc.type_subtype == 0x02 || wlan.fc.type_subtype == 0x03 ||  wlan.fc.type_subtype == 0x04 || wlan.fc.type_subtype == 0x05)', debug=True)
 
-for packet in cap.sniff_continuously():
-   print(packet.wlan.field_names)  # see all available wlan fields
-   break
+def debug_wlan():
+	for packet in cap.sniff_continuously():
+		print(packet.wlan.field_names)  # see all available wlan fields
+		break
 
-# Displays all attributes 
-for packet in cap.sniff_continuously():
-	for layer in packet.layers:
-		print(f"\n-- {layer.layer_name} ---")
-		print(layer.field_names)
-	break
+def debug_all():
+	# Displays all attributes 
+	for packet in cap.sniff_continuously():
+		for layer in packet.layers:
+			print(f"\n-- {layer.layer_name} ---")
+			print(layer.field_names)
+		break
 
 
-
+if __name__ == '__main__':
+	debug_wlan()
+	debug_all()
 
 
 
