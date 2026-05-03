@@ -47,12 +47,13 @@ class Pyshark_distance():
 
         cap = pyshark.LiveCapture(interface= interface, 
                                   display_filter='(wlan.fc.type_subtype == 0x00' +
-                                #   '|| wlan.fc.type_subtype == 0x01' +
-                                #   '|| wlan.fc.type_subtype == 0x02' + 
-                                #   '|| wlan.fc.type_subtype == 0x03 ' + 
+                                  '|| wlan.fc.type_subtype == 0x01' +
+                                  '|| wlan.fc.type_subtype == 0x02' + 
+                                  '|| wlan.fc.type_subtype == 0x03 ' + 
                                   '||  wlan.fc.type_subtype == 0x04 ' + 
-                                  '|| wlan.fc.type_subtype == 0x05 )', 
-                                #   '|| wlan.fc.type_subtype == 0x08)', 
+                                  '|| wlan.fc.type_subtype == 0x05 ' +
+                                  '|| wlan.fc.type_subtype == 0x08)' +
+                                  '&& (wlan.ssid == "TP-Link_D5C0")', 
                                 # monitor_mode=True,
                                   debug=True)
 
