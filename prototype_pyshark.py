@@ -1,16 +1,8 @@
-<<<<<<< Updated upstream
-=======
 # For initial ideas on using PyShark.
->>>>>>> Stashed changes
 # Deep Packet Capture in Python: A Complete Guide to Sniffing Techniques
 # by Ahmed Sobhi Ali (Jul 23 2025)
 # https://medium.com/@ahmedsobhialii/deep-packet-capture-in-python-a-complete-guide-to-sniffing-techniques-54d650e403e1 [accessed 29 04 2026]
 
-<<<<<<< Updated upstream
-# Deep Packet Capture in Python: A Complete Guide to Sniffing Techniques
-# by Ahmed Sobhi Ali (Jul 23 2025)
-# https://stackoverflow.com/questions/11217674/how-to-calculate-distance-from-wifi-router-using-signal-strength [accessed 29 04 2026]
-=======
 
 ################# rssi_to_distance() uses the log-distance path loss model ####################################################
 # References:
@@ -29,7 +21,6 @@
 # How to calculate distance from Wifi router using Signal Strength?
 # by Ihab (Jun 28 2012)
 # https://stackoverflow.com/questions/11217674/how-to-calculate-distance-from-wifi-router-using-signal-strength [accessed 30 04 2026]
->>>>>>> Stashed changes
 
 import asyncio
 import pyshark
@@ -48,25 +39,6 @@ class Pyshark_distance():
         condition = 2 # accuracy notes
         return round(10 ** ((calibration - rssi) / (10 * condition)), 2)
     
-<<<<<<< Updated upstream
-    # This function 
-    # def get_ssid(self, packet): 
-    #     try:
-    #         raw = packet['wlan.mgt'].wlan_ssid
-    #         return bytes.fromhex(str(raw)).decode('utf-8', errors='replace')
-    #     except (KeyError, AttributeError, ValueError):
-    #         pass
-        
-    #     try:
-    #         ssid = packet['wlan_mgt'].get_field_value('ssid')
-    #         if ssid:
-    #             return str(ssid)
-    #     except (KeyError, AttributeError):
-    #         pass
-    #     return '(wildcard)'
-    
-=======
->>>>>>> Stashed changes
     # This function handles live capture data and displays relevant output
     def live_data(self, interface):
     
@@ -93,21 +65,6 @@ class Pyshark_distance():
             
             destination_bssid = packet.wlan.ra # Destination BSSID
             
-<<<<<<< Updated upstream
-            # Lan testing why we couldn't get the SSID
-            # ssid = packet.wlan.get_field_value('ssid') # ssid field (originally)
-
-            # ssid = str(packet['wlan.mgt'].get_field_value('ssid') or '(wildcard)')
-            # ssid = str(packet['wlan.mgt'].get_field_value('ssid'))
-
-            # ssid = str(packet.wlan.mgt.ssid)
-            
-            # ssid = self.get_ssid(packet)
-            # raw_ssid = packet.layers[1].wlan_ssid
-            # ssid = bytes.fromhex(str(raw_ssid)).decode("utf-8", errors="replace")
-            
-=======
->>>>>>> Stashed changes
             ssid = '(wildcard)' # Initial SSID value
 
             # For loop iterates layers within a captured packet
