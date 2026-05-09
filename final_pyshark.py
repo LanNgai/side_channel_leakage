@@ -34,7 +34,7 @@ class Pyshark_distance():
         interface = input("Please enter the name of the interface: ")
         return interface
     
-    def rssi_to_distance(self, rssi):
+    def _rssi_to_distance(self, rssi):
         calibration = -67 # calibration device's RSS at a distance of 1 meter                          
         condition = 2 # accuracy notes
         return round(10 ** ((calibration - rssi) / (10 * condition)), 2)
