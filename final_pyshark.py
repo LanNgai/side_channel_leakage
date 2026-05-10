@@ -84,7 +84,7 @@ class Pyshark_distance():
 
             rssi = int(packet.radiotap.dbm_antsignal) # Relative signal strength taken from the packets' radiotap headers' antenna signal
 
-            distance = self.rssi_to_distance(rssi) # Calls the function that calculates distance equivalent from the RSSI
+            distance = self._rssi_to_distance(rssi) # Calls the function that calculates distance equivalent from the RSSI
 
             print(f"SubType: '{subtype}'   | MAC: '{mac}' | SSID: '{ssid}'| Dest BSSID : '{destination_bssid}' | Signal: '{rssi}' dBm | Distance: '{distance}' m")
    
