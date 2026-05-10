@@ -4,8 +4,12 @@
 #https://stackoverflow.com/questions/5431909/returning-a-boolean-from-a-bash-function
 #https://stackoverflow.com/questions/36371221/checking-the-success-of-a-command-in-a-bash-if-statement
 
+# Takes in user input for the wireless interface.
 read -p "Please enter the wireless interface: " interface
 
+# Function to check if inputed interface is already in monitor mode.
+# If the interface is not in monitor mode it will put the interface 
+# into monitor mode and return 0 which essentially means success in Bash.
 monitor_mode() {
 	if iw $interface info | grep "type monitor"; then
 		echo "Interface $interface is already in monitor mode."
@@ -20,8 +24,11 @@ monitor_mode() {
 	fi
 }
 
+# This just lets the user know if it's successfully in monitor mode.
 if monitor_mode; then 
 	echo "Success!!! $interface is in monitor mode!"
         iw dev
+else 
+	echo "Something went wrong. :'("
 fi
 
